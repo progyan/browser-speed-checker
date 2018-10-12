@@ -23,7 +23,7 @@ function count(){
 }
 
 function rateN(number){
-    if(number < 41)
+    if(number < 56)
         return 0;
     else if(number < 66)
         return 1;
