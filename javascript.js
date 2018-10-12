@@ -1,0 +1,49 @@
+let startTime;
+
+function startCount(){
+    let num = document.getElementById("number");
+    num.innerHTML = "0";
+    num.classList.add("on");
+    startTime = new Date().getTime();
+    count();
+    startCount = function(){}; // Немного жестокости...
+}
+
+function count(){
+    let num = document.getElementById("number");
+    num.innerHTML = parseInt(num.innerHTML) + 1;
+    requestAnimationFrame(count);
+    let nowTime = new Date().getTime();
+    let timePassed = nowTime - startTime;
+    if(timePassed >= 1000) {
+        num.innerHTML = num.innerHTML + "<span class='mini'>fps</span>";
+        rate(parseInt(num.innerHTML), document.getElementById("header"), document.body);
+        count = function(){}; // Опять немного жестокости... Зато без ошибок!
+    }
+}
+
+function rateN(number){
+    if(number < 41)
+        return 0;
+    else if(number < 66)
+        return 1;
+    else
+        return 2;
+}
+
+function rate(number, el, body){
+    let n = rateN(number);
+    switch(n) {
+        case 0:
+            el.innerHTML = "Bad speed."
+            body.classList.add("badspeed");
+            return;
+        case 1:
+            el.innerHTML = "Not bad!"
+            body.classList.add("okspeed");
+            return;
+        case 2:
+            el.innerHTML = "Exellent!"
+            body.classList.add("goodspeed");
+    }
+}

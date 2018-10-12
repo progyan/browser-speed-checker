@@ -1,0 +1,59 @@
+body {
+    background-color: #111111;
+}
+
+#number {
+    color: #bbbbbb;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 50vh;
+    transition-duration: 0.25s;
+    transition-property: color, text-shadow;
+}
+
+.icon {
+    width: 10vh;
+    border-radius: 1vw;
+    opacity: 0.8;
+}
+
+.mini {
+    font-size: 10vh;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10vh;
+}
+
+#number:hover {
+    color: #dddddd;
+    text-shadow: 0 0 10px #dddddd;
+}
+
+.on {
+    color: white !important;
+    text-shadow: 0 0 20px orange !important;
+}
+
+.goodspeed {
+    background-color: #113311;
+}
+
+.okspeed {
+    background-color: #333311;
+}
+
+.badspeed {
+    background-color: #331111;
+}
+
+body {
+    transition-duration: 0.2s;
+    transition-property: background-color;
+}
