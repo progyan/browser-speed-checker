@@ -5,11 +5,19 @@ function startCount(){
     num.innerHTML = "0";
     num.classList.add("on");
     startTime = new Date().getTime();
-    count();
-    startCount = function(){}; // Немного жестокости...
+    //count();
+    for(let i = 0; i < 100000000; i++){
+        let trash = i / Math.random();
+    }
+    let nowTime = new Date().getTime();
+    let timePassed = nowTime - startTime;
+    num.innerHTML = timePassed + "<span class='mini'>ms / 100M divisions</span>";
+    rate(parseInt(num.innerHTML), document.getElementById("header"), document.body);
+    
+    startCount = function(){}; // Немного жестокости... Зато без ошибок!
 }
 
-function count(){
+/*function count(){
     let num = document.getElementById("number");
     num.innerHTML = parseInt(num.innerHTML) + 1;
     setTimeout(count, 0);
@@ -20,7 +28,7 @@ function count(){
         rate(parseInt(num.innerHTML), document.getElementById("header"), document.body);
         count = function(){}; // Опять немного жестокости... Зато без ошибок!
     }
-}
+}*/
 
 function rateN(number){
     if(number < 56)
