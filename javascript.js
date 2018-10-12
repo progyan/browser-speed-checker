@@ -12,7 +12,7 @@ function startCount(){
 function count(){
     let num = document.getElementById("number");
     num.innerHTML = parseInt(num.innerHTML) + 1;
-    requestAnimationFrame(count);
+    setTimeout(count, 0);
     let nowTime = new Date().getTime();
     let timePassed = nowTime - startTime;
     if(timePassed >= 1000) {
