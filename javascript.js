@@ -31,9 +31,9 @@ function startCount(){
 }*/
 
 function rateN(number){
-    if(number < 56)
+    if(number > 5000)
         return 0;
-    else if(number < 66)
+    else if(number > 1000)
         return 1;
     else
         return 2;
